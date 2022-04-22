@@ -3,16 +3,16 @@ const PAGES = `${__dirname}/../pages/`;
 const BUILD = `${__dirname}/../docs/`;
 
 const fs = require('fs');
-const marked = require('./lib/marked-node');
+const marked = require('./lib/supermarked');
 const highlight = require('./lib/highlight-node');
 const checkBox = require('./lib/checkBox');
 
-marked.setOptions({
+var options = {
     langPrefix: '',
     highlight: function(code) {
         return highlight.highlightAuto(code).value;
     },
-});
+};
 
 // Get index.html text
 const index = fs.readFileSync(INDEX, 'utf8');
@@ -26,7 +26,7 @@ markdown.forEach(file => {
     const markdownText = fs.readFileSync(PAGES + file, 'utf8');
 
     // Convert markdown to html
-    const content = marked(markdownText);
+    const content = marked(markdownText,options);
     
     // Replace index dev script with page content
     let output = index.replace('<script type="module" src="./utils/dev.js"></script>', content);

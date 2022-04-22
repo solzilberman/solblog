@@ -1,4 +1,4 @@
 # 💻 Blog
 
 ## Posts
-Check out [this markdown page](?test)
+- Check out [this markdown page](?test)
