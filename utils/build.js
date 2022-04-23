@@ -1,4 +1,4 @@
-const INDEX = `${__dirname}/../index.html`;
+const INDEX = `${__dirname}/../templates/index.html`;
 const PAGES = `${__dirname}/../pages/`;
 const BUILD = `${__dirname}/../docs/`;
 

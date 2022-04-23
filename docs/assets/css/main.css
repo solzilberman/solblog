@@ -5,11 +5,13 @@
 :root {
     --bg-dark: rgba(0, 0, 0, 0.84);
     --fg-light: #a8a8a2;
-  }
+    --a-tag-light: #aad0ed;
+}
 
 
 body {
     font-family: 'Ubuntu', sans-serif;
+    text-align: center;
 }
 
 h1 {
@@ -48,6 +50,7 @@ button, select {
 
 a, button, input, select, textarea {
     -webkit-tap-highlight-color: transparent;
+    color: red;
 }
 
 :root {
@@ -97,7 +100,6 @@ h2 {
 
 h3 {
     font-size: 26px;
-    margin: 40px auto 0px;
     color: var(--fg-light);
     font-weight: 400;
 }
@@ -143,11 +145,11 @@ img + em {
 }
 
 a {
-    color: inherit;
+    color: var(--a-tag-light);
+
 }
 
 ul {
-    margin-top: 30px;
 }
 
 li > ul {

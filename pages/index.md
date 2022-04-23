@@ -1,4 +1,5 @@
 # 💻 Blog
+___
 
-## Posts
-- Check out [this markdown page](?test)
+## 📝 Posts
+- [functional vs procedural programming](?test)
