@@ -12,7 +12,17 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
+    
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
 
 h1 {
     font-family: 'Ubuntu', sans-serif;

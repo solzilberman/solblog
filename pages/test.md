@@ -1,10 +1,11 @@
+# 💻 Blog
+___
+
 Understand Functional vs. Procedural Programming by Making a Sandwich.
 ======================================================================
 [back](?index)
 
-Let’s write a program to build a sandwich using two different programming paradigms.
-
-![](https://miro.medium.com/max/1224/1*nxSZWNL-qHNlgGAgfBZYSg.jpeg)
+*Let’s write a program to build a sandwich using two different programming paradigms.*
 
 ## **Procedural (imperative) Program**
 
