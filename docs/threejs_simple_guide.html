@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1, viewport-fit=cover">
+        <title>A Simple Guide to Three Js.</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+        <!-- <link rel="stylesheet" href="https://latex.now.sh/style.css"> -->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <h1 id="a-simple-guide-to-three-js">A Simple Guide to Three Js.</h1>
+<p><a href="index.html">back</a></p>
+<p>ThreeJS is a graphics programming library for the web. In this tutorial, we will create a basic scene complete with an Arcball camera and 3d objects filled with shaders.</p>
+<hr>
+<h2 id="step-one-file-set-up">Step One: File Set Up</h2>
+<p>Create an <code>index.html</code> and <code>index.js</code> as usual. Link them together with <code>&lt;script&gt;</code> tag.</p>
+<hr>
+<h2 id="step-two-scene-set-up">Step Two: Scene Set Up</h2>
+<p>First, we initialize the <code>scene</code>, <code>renderer</code>, and <code>camera</code> objects. The scene objects <em>allows you to set up what and where is to be rendered by three.js</em>. The camera is a <code>virtual</code> camera that exists in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="double-struck">R</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span> space. The <code>renderer</code> controls the drawing functionality and WebGL bindings.</p>
+<pre><code><span class="hljs-keyword">var</span> scene = <span class="hljs-keyword">new</span> THREE.Scene();
+<span class="hljs-keyword">var</span> camera = <span class="hljs-keyword">new</span> THREE.PerspectiveCamera( <span class="hljs-number">75</span>, <span class="hljs-built_in">window</span>.innerWidth/<span class="hljs-built_in">window</span>.innerHeight, <span class="hljs-number">0.1</span>, <span class="hljs-number">1000</span> );
+
+<span class="hljs-keyword">var</span> renderer = <span class="hljs-keyword">new</span> THREE.WebGLRenderer();
+renderer.setSize( <span class="hljs-built_in">window</span>.innerWidth, <span class="hljs-built_in">window</span>.innerHeight );
+<span class="hljs-built_in">document</span>.body.appendChild( renderer.domElement );
+
+<span class="hljs-comment">// camera controls</span>
+<span class="hljs-keyword">var</span> controls = <span class="hljs-keyword">new</span> THREE.OrbitControls(camera, renderer.domElement);</code></pre><hr>
+<h2 id="step-three-add-cube-to-scene">Step Three: Add Cube to Scene</h2>
+<p>3D objects in threejs are called <code>meshes</code>. Each <code>mesh</code> consists of a <code>geometry</code> and a <code>material</code>. After initializing the <code>mesh</code>, we add it to the <code>scene</code> object we initialized earlier.</p>
+<pre><code><span class="hljs-keyword">var</span> geometry = <span class="hljs-keyword">new</span> THREE.BoxGeometry( <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span> );
+<span class="hljs-keyword">var</span> material = <span class="hljs-keyword">new</span> THREE.MeshBasicMaterial( { <span class="hljs-attr">color</span>: <span class="hljs-number">0x00ff00</span> } );
+<span class="hljs-keyword">var</span> cube = <span class="hljs-keyword">new</span> THREE.Mesh( geometry, material );
+scene.add( cube );</code></pre><hr>
+<h2 id="step-4-animation-loop">Step 4: Animation Loop</h2>
+<p>The final step is setting up the render loop which will update and render the <code>scene</code> to the canvas.</p>
+<pre><code><span class="hljs-keyword">var</span> animate = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    requestAnimationFrame( animate );
+    renderer.render(scene, camera);
+};
+
+animate();</code></pre><hr>
+<p>Spin up a web server and navigate to <code>index.html</code>. You should have a 3D environment with a single cube and camera controls!</p>
+<p><a href="https://github.com/solzilberman/three_js_boilerplate/blob/master/index.js">Source Code</a></p>
+
+    </body>
+</html>

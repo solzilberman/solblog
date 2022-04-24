@@ -2,4 +2,5 @@
 ___
 
 ## 📝 Posts
-- [functional vs procedural programming](?test)
+- [simple guide to threejs](?threejs_simple_guide)
+- [functional vs procedural programming](?functional_vs_procedural)
