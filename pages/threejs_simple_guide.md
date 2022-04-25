@@ -1,7 +1,7 @@
 # A Simple Guide to Three Js.
 [back](?index)
 
-ThreeJS is a graphics programming library for the web. In this tutorial, we will create a basic scene complete with an Arcball camera and 3d objects filled with shaders.
+ThreeJS is a graphics programming library for the web. In this tutorial, we will create a basic scene with an interactive camera and colored cube.
 ___
 ## Step One: File Set Up
 Create an `index.html` and `index.js` as usual. Link them together with `<script>` tag.
